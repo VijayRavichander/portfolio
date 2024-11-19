@@ -1,29 +1,21 @@
-# Stage 1: Base image
-FROM node:20-alpine AS base
+# Use a Node.js base image
+FROM node:20-alpine
+
+# Set the working directory inside the container
 WORKDIR /app
 
-# Stage 2: Install dependencies
-FROM base AS deps
-WORKDIR /app
+# Copy dependency files and install production dependencies
 COPY package.json package-lock.json ./
-RUN npm ci --only=production
+RUN npm install
 
-# Stage 3: Build the application
-FROM base AS builder
-WORKDIR /app
-COPY package.json package-lock.json ./
-COPY --from=deps /app/node_modules ./node_modules
+# Copy the application source code
 COPY . .
+
+# Build the application
 RUN npm run build
 
-# Stage 4: Production server
-FROM base AS runner
-WORKDIR /app
-ENV NODE_ENV=production
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/node_modules ./node_modules
-
+# Expose the application port
 EXPOSE 3000
+
+# Start the application
 CMD ["npm", "run", "start"]
