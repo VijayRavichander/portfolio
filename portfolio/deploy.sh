@@ -1,18 +1,19 @@
 #!/bin/bash
 
 # Env Vars
-POSTGRES_USER="myuser"
-POSTGRES_PASSWORD=$(openssl rand -base64 12)  # Generate a random 12-character password
-POSTGRES_DB="mydatabase"
-SECRET_KEY="my-secret" # for the demo app
-NEXT_PUBLIC_SAFE_KEY="safe-key" # for the demo app
-DOMAIN_NAME="nextselfhost.dev" # replace with your own
-EMAIL="your-email@example.com" # replace with your own
+# POSTGRES_USER="myuser"
+# POSTGRES_PASSWORD=$(openssl rand -base64 12)  # Generate a random 12-character password
+# POSTGRES_DB="mydatabase"
+# SECRET_KEY="my-secret" # for the demo app
+# NEXT_PUBLIC_SAFE_KEY="safe-key" # for the demo app
+DOMAIN_NAME="vijayravichander.com" # replace with your own
+EMAIL="vijaypreetham1@gmail.com" # replace with your own
 
 # Script Vars
-REPO_URL="https://github.com/leerob/next-self-host.git"
+REPO_URL="https://github.com/VijayRavichander/portfolio.git"
 APP_DIR=~/myapp
 SWAP_SIZE="1G"  # Swap size of 1GB
+PROJECT_DIR="portfolio"
 
 # Update package list and upgrade existing packages
 sudo apt update && sudo apt upgrade -y
@@ -152,14 +153,14 @@ sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/myapp
 sudo systemctl restart nginx
 
 # # Build and run the Docker containers from the app directory (~/myapp)
-# cd $APP_DIR
-# sudo docker-compose up --build -d
+cd $APP_DIR/$PROJECT_DIR
+sudo docker-compose up --build -d
 
 # # Check if Docker Compose started correctly
-# if ! sudo docker-compose ps | grep "Up"; then
-#   echo "Docker containers failed to start. Check logs with 'docker-compose logs'."
-#   exit 1
-# fi
+if ! sudo docker-compose ps | grep "Up"; then
+  echo "Docker containers failed to start. Check logs with 'docker-compose logs'."
+  exit 1
+fi
 
 # Output final message
 echo "Deployment complete. Your Next.js app and PostgreSQL database are now running. 
