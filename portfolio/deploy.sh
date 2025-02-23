@@ -6,14 +6,14 @@
 # POSTGRES_DB="mydatabase"
 # SECRET_KEY="my-secret" # for the demo app
 # NEXT_PUBLIC_SAFE_KEY="safe-key" # for the demo app
-DOMAIN_NAME="vijayravichander.com" # replace with your own
-EMAIL="vijaypreetham1@gmail.com" # replace with your own
+# DOMAIN_NAME="vijayravichander.com" # replace with your own
+# EMAIL="vijaypreetham1@gmail.com" # replace with your own
 
-# Script Vars
-REPO_URL="https://github.com/VijayRavichander/portfolio.git"
-APP_DIR=~/myapp
-SWAP_SIZE="1G"  # Swap size of 1GB
-PROJECT_DIR="portfolio"
+# # Script Vars
+# REPO_URL="https://github.com/VijayRavichander/portfolio.git"
+# APP_DIR=~/myapp
+# SWAP_SIZE="1G"  # Swap size of 1GB
+# PROJECT_DIR="portfolio"
 
 # Update package list and upgrade existing packages
 sudo apt update && sudo apt upgrade -y
@@ -62,14 +62,14 @@ sudo systemctl enable docker
 sudo systemctl start docker
 
 # Clone the Git repository
-if [ -d "$APP_DIR" ]; then
-  echo "Directory $APP_DIR already exists. Pulling latest changes..."
-  cd $APP_DIR && git pull
-else
-  echo "Cloning repository from $REPO_URL..."
-  git clone $REPO_URL $APP_DIR
-  cd $APP_DIR
-fi
+# if [ -d "$APP_DIR" ]; then
+#   echo "Directory $APP_DIR already exists. Pulling latest changes..."
+#   cd $APP_DIR && git pull
+# else
+#   echo "Cloning repository from $REPO_URL..."
+#   git clone $REPO_URL $APP_DIR
+#   cd $APP_DIR
+# fi
 
 # For Docker internal communication ("db" is the name of Postgres container)
 # DATABASE_URL="postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@db:5432/$POSTGRES_DB"
