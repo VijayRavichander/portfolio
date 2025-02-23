@@ -1,6 +1,4 @@
 "use client";
-import { ListBulletIcon } from "@radix-ui/react-icons";
-import { Dot } from "lucide-react";
 import Link from "next/link";
 export default function Page() {
   return (

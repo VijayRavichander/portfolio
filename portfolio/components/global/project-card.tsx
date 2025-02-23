@@ -1,8 +1,6 @@
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import Link from "next/link";
-import { ArrowUpRight, Link2, LinkIcon } from "lucide-react";
+import { ArrowUpRight} from "lucide-react";
 
 const projects = [
   {
