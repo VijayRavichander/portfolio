@@ -4,11 +4,11 @@ import { ArrowUpRight} from "lucide-react";
 
 const projects = [
   {
-    name: "LiteCode",
+    name: "LiteCode - nano LeetCode",
     status: "Production",
     description:
       "A streamlined coding practice platform that executes and evaluates code submissions in real-time using Judge0's API, with Next.js powering the frontend and Redis handling caching for optimal performance. This nano version of LeetCode features a robust code execution engine, problem-solving workspace, and efficient result validation",
-    link: "https://github.com/VijayRavichander/litecode",
+    link: "https://github.com/VijayRavichander/nano-Leetcode",
     image: "/litecode.jpeg",
   },
   {
