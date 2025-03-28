@@ -39,7 +39,7 @@ export default function Home() {
               </span>
             </div>
             <div className="font-semibold text-2x">
-              Developing at the intersection of LLMs and Software Developement
+              Developing at the intersection of LLMs and Software Development
             </div>
             <div>
               <div className="flex my-4">
