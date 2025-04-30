@@ -11,7 +11,7 @@ export default function Page() {
               <div className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-white to-blue-400">
                 Software Engineering Intern
               </div>
-              <div>July 2024 - September 2024</div>
+              <div>May 2024 - June 2024</div>
             </div>
             <div className="flex flex-col lg:flex-row justify-between">
               <div className="font-semibold">
