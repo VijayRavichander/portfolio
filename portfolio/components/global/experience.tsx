@@ -70,7 +70,7 @@ const Experience = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, type: "spring", bounce: 0 }}
           >
             <div
               className="absolute inset-0 bg-black/70"
@@ -86,6 +86,9 @@ const Experience = () => {
                   aria-label="Close experience details"
                   onClick={() => setActiveExperience(null)}
                   className="absolute right-4 top-4 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-neutral-900/80 text-white hover:bg-neutral-900"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={transition}
                 >
                   <X className="h-4 w-4" />
@@ -93,11 +96,17 @@ const Experience = () => {
                 <motion.div
                   layoutId={`experience-header-${activeExperience.company}`}
                   className="border-b border-white/10 px-6 py-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={transition}
                 >
                   <motion.h3
                     layoutId={`experience-title-${activeExperience.company}`}
                     className="text-2xl font-semibold text-white/95"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={transition}
                   >
                     {activeExperience.title}
@@ -105,6 +114,9 @@ const Experience = () => {
                   <motion.p
                     layoutId={`experience-company-${activeExperience.company}`}
                     className="mt-1 text-sm uppercase tracking-[0.25em] text-white/60"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={transition}
                   >
                     {activeExperience.company}
@@ -113,6 +125,9 @@ const Experience = () => {
                 <motion.div
                   layoutId={`experience-description-${activeExperience.company}`}
                   className="px-6 py-6 text-white/75 leading-relaxed flex flex-col gap-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={transition}
                 >
                   {activeExperience.description.map((description, index) => (

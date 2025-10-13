@@ -1,13 +1,16 @@
 "use client";
 
-import Image from "next/image";
-// Removed Button in favor of a custom CTA style
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const projects = [
+  {
+    name: "colpali distill",
+    description:
+      "Improving document retrieval with late interaction and distillation",
+    link: "https://github.com/VijayRavichander/colpali-distill",
+  },
   {
     name: "litecode",
     description:
@@ -16,26 +19,14 @@ const projects = [
   },
   {
     name: "nano photoAI",
-    description: "Image and Create at ease with AI",
+    description: "Imagine and Create at ease with AI",
     link: "https://photoai.vijayravichander.com",
   },
-  {
-    name: "colpali-distill",
-    description: "Improving document retrieval with late interaction and distillation",
-    link: "https://github.com/VijayRavichander/colpali-distill",
-  }
 ];
 
 export const ProjectCards = () => {
-  const [active, setActive] = useState<(typeof projects)[number] | null>(null);
+  // const [active, setActive] = useState<(typeof projects)[number] | null>(null);
   const transition = { type: "spring", duration: 0.2, bounce: 0 };
-  useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setActive(null);
-    }
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
 
   return (
     <>
@@ -47,24 +38,21 @@ export const ProjectCards = () => {
           <motion.div
             key={project.name}
             layoutId={`card-${project.name}`}
-            className="group cursor-pointer rounded-xl text-white/95 shadow-[0_1px_0_rgba(0,0,0,0.02)] hover:shadow-[0_2px_0_rgba(0,0,0,0.03)] transition-shadow overflow-hidden"
-            whileTap={{ scale: 0.98 }}
-            onClick={() => setActive(project)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") setActive(project);
-            }}
-            tabIndex={0}
-            role="button"
+            className=" rounded-xl text-white/95 shadow-[0_1px_0_rgba(0,0,0,0.02)] hover:shadow-[0_2px_0_rgba(0,0,0,0.03)] transition-shadow overflow-hidden"
             aria-label={`Open ${project.name}`}
             transition={transition}
           >
             <motion.div
               layoutId={`title-${project.name}`}
-              className="py-3 flex flex-col gap-2"
+              className="py-3 flex flex-col gap-2 "
               transition={transition}
             >
-              <div className="text-xl italic leading-snug font-serif text-white/95">
-                <Link href={project.link} target="_blank" className="hover:text-brand-light">
+              <div className="text-xl italic leading-snug font-serif text-white/95 cursor-pointer">
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="hover:text-brand-light"
+                >
                   {project.name}{" "}
                   <ArrowUpRight
                     strokeWidth={1}

@@ -49,8 +49,8 @@ export default function Home() {
             </div>
 
             <p className="mt-4 max-w-3xl font-normal text-base text-white/70">
-              Passionate about crafting AI-first software that&apos;s reliable,
-              fast and a joy to work with.
+              Crafting AI-first software that&apos;s reliable,
+              fast and a joy to work with
             </p>
           </motion.div>
         </div>
@@ -109,6 +109,7 @@ export default function Home() {
             <Socials />
           </motion.div>
         </div>
+
       </section>
     </main>
   );

@@ -40,6 +40,8 @@ const Socials = () => {
           X
         </a>
       </div>
+      <div className="font-xs text-white/80 py-2">{"&"}</div>
+      <div className="font-xs text-white/80">ravichander.vijay@gmail.com</div>
     </>
   );
 };
