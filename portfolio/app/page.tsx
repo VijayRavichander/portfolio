@@ -7,41 +7,27 @@ import Socials from "@/components/global/socials";
 import { ProjectCards } from "@/components/global/project-card";
 
 export default function Home() {
-  const techStack = [
-    {
-      category: "Artificial Intelligence",
-      tools: ["PyTorch", "vLLM"],
-    },
-    {
-      category: "Software Development",
-      tools: [
-        "Next.js",
-        "React",
-        "Tailwind",
-        "Hono",
-        "Flask",
-        "Express",
-        "Postgres",
-        "Redis",
-        "Kafka",
-      ],
-    },
-    {
-      category: "DevOps & MLOps",
-      tools: ["AWS", "Kubernetes", "Docker"],
-    },
-  ];
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 8 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { ease: "easeOut", duration: 0.4, delay: index * 0.25 },
+    }),
+  };
 
   return (
     <main>
       {/* Hero */}
-      <section className="pb-6 pt-24">
+      <motion.section
+        custom={0}
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        className="pb-6 pt-24"
+      >
         <div className="max-w-5xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-          >
+          <div>
             <div className="flex items-center gap-2">
               <h1 className="mt-2 text-2xl font-normal tracking-tight text-white/95 ">
                 Always Building!
@@ -52,65 +38,73 @@ export default function Home() {
               Crafting AI-first software that&apos;s reliable,
               fast and a joy to work with
             </p>
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Education */}
-      <section className="py-6">
+      <motion.section
+        custom={1}
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        className="py-6"
+      >
         <div className="max-w-5xl mx-auto px-4 text-white/95">
-          <motion.div
-            initial={{ opacity: 0, x: -8 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
+          <div>
             <div className="text-base md:text-xl font-bold tracking-tight text-white/80 font-newsreader pb-2">
               Education
             </div>
-            <div>Master of Science, AI @ Viterbi, USC</div>
-          </motion.div>
+            <div>Master's in Computer Science, AI @ Viterbi, USC</div>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience*/}
-      <section className="py-6">
+      <motion.section
+        custom={2}
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        className="py-6"
+      >
         <div className="max-w-5xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, x: -8 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
+          <div>
             <Experience />
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects */}
-      <section className="py-6">
+      <motion.section
+        custom={3}
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        className="py-6"
+      >
         <div className="max-w-5xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, x: 8 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
+          <div>
             <ProjectCards />
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Connect */}
-      <section className="py-6">
+      <motion.section
+        custom={4}
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        className="py-6"
+      >
         <div className="max-w-5xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, x: 8 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
+          <div>
             <Socials />
-          </motion.div>
+          </div>
         </div>
 
-      </section>
+      </motion.section>
     </main>
   );
 }
