@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Newsreader } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import NavBar from "@/components/global/navbar";
@@ -17,8 +18,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Vijay",
   description: "Looking for Full Time Opportunities",
 };
 
@@ -30,11 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} antialiased bg-[#8c9657] bg-[#f5c9b8] bg-black `}
       >
         <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
