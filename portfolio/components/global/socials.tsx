@@ -1,5 +1,3 @@
-import { File, Github, Linkedin } from "lucide-react";
-
 const Socials = () => {
   return (
     <>

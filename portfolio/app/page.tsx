@@ -1,6 +1,5 @@
 "use client";
 
-import { Github, Linkedin, File, Hammer } from "lucide-react";
 import { motion } from "framer-motion";
 import Experience from "@/components/global/experience";
 import Socials from "@/components/global/socials";
@@ -55,7 +54,7 @@ export default function Home() {
             <div className="text-base md:text-xl font-bold tracking-tight text-white/80 font-newsreader pb-2">
               Education
             </div>
-            <div>Master's in Computer Science, AI @ Viterbi, USC</div>
+            <div>Master&apos;s in Computer Science, AI @ Viterbi, USC</div>
           </div>
         </div>
       </motion.section>
