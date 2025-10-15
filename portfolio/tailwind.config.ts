@@ -13,7 +13,6 @@ const config: Config = {
   theme: {
     extend: {
       boxShadow: {
-        // keep Tailwind defaults; add yours
         "bevel-s":
           "inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015",
         "bevel-m":
